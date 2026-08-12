@@ -49,26 +49,48 @@ mkdir adguard-home
 cd adguard-home
 ```
 6. echo the following into the docker-compose.yml
+<br>
 echo "services:
+<br>
   adguard:
-    image: adguard/adguardhome:latest
+<br>  
+  image: adguard/adguardhome:latest
+<br>
     container_name: adguard-home
+<br>
     restart: unless-stopped
+<br>   
     # Map individual ports for DNS, the setup wizard, and encrypted DNS
+<br>
     ports:
+<br>
       # DNS ports - these handle all DNS queries
+<br>
       - "53:53/tcp"
+<br>
       - "53:53/udp"
+<br>
       # Web UI and API
+<br>
       - "80:80/tcp"
+<br>
       - "3000:3000/tcp"
+<br>
       # DNS-over-TLS
+<br>
       - "853:853/tcp"
+<br>
       # DNS-over-HTTPS
+<br>
       - "443:443/tcp"
-    volumes:
-      # Persist configuration across container restarts
-      - ./conf:/opt/adguardhome/conf
-      # Persist work data including query logs and filters
-      - ./work:/opt/adguardhome/work" >> docker-compose.yml
+<br>
+volumes:
+<br>
+# Persist configuration across container restarts
+<br>
+  - ./conf:/opt/adguardhome/conf
+<br>
+# Persist work data including query logs and filters
+<br>
+  - ./work:/opt/adguardhome/work" >> docker-compose.yml
 7. 

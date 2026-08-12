@@ -105,3 +105,29 @@ sudo ufw allow 443
 sudo ufw allow 3000
 sudo ufw allow 3000
 ```
+8. To run the container, you will need to temporarily go back to actual external dns servers:
+```bash
+vim /etc/resolv.conf
+```
+input: 
+nameserver 8.8.8.8
+nameserver 1.1.1.1
+comment out the 127.0.0.1 instance temporarily
+9. Restart docker service
+```bash
+systemctl restart docker
+```
+10. Create and modify file:
+```bash
+vim /etc/docker/daemon.json
+```
+11. Input following: (allows for external requests to other dns servers)
+```bash
+{
+  "dns": ["1.1.1.1", "8.8.8.8"]
+}
+```
+12. Reload docker
+```bash
+systemctl restart docker
+```

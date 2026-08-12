@@ -131,3 +131,7 @@ vim /etc/docker/daemon.json
 ```bash
 systemctl restart docker
 ```
+13. Run the docker compose file
+```bash
+docker compose up -d
+```

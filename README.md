@@ -40,14 +40,17 @@ netstat -tulpn
 ```
 <br>
 Make sure port 53 is clear
+<br>
 4. Make directory: adguard-home
 ```bash
 mkdir adguard-home
 ```
+<br>
 5. Change directory into adguard-home
 ```bash
 cd adguard-home
 ```
+<br>
 6. echo the following into the docker-compose.yml
 <br>
 echo "services:

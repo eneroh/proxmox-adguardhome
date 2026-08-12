@@ -40,4 +40,39 @@ netstat -tulpn
 ```
 <br>
 Make sure port 53 is clear
-4. 
+4. Make directory: adguard-home
+```bash
+mkdir adguard-home
+```
+5. Change directory into adguard-home
+```bash
+cd adguard-home
+```
+6. echo the following into the docker-compose.yml
+# docker-compose.yml - AdGuard Home deployment
+```bash
+
+echo "services:
+  adguard:
+    image: adguard/adguardhome:latest
+    container_name: adguard-home
+    restart: unless-stopped
+    # Map individual ports for DNS, the setup wizard, and encrypted DNS
+    ports:
+      # DNS ports - these handle all DNS queries
+      - "53:53/tcp"
+      - "53:53/udp"
+      # Web UI and API
+      - "80:80/tcp"
+      - "3000:3000/tcp"
+      # DNS-over-TLS
+      - "853:853/tcp"
+      # DNS-over-HTTPS
+      - "443:443/tcp"
+    volumes:
+      # Persist configuration across container restarts
+      - ./conf:/opt/adguardhome/conf
+      # Persist work data including query logs and filters
+      - ./work:/opt/adguardhome/work" >> docker-compose.yml
+```
+7. 

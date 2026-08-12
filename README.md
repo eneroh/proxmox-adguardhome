@@ -96,4 +96,12 @@ volumes:
 # Persist work data including query logs and filters
 <br>
   - ./work:/opt/adguardhome/work" >> docker-compose.yml
-7. 
+7. Using ufw allow the following ports:
+```bash
+sudo ufw enable
+sudo ufw allow 80
+sudo ufw allow 443
+sudo ufw allow 3000
+sudo ufw allow 3000
+```
+

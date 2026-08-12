@@ -34,3 +34,10 @@ sudo mv /etc/resolv.conf /etc/resolv.conf.backup
 sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
 sudo systemctl reload-or-restart systemd-resolved
 ```
+3. Check port 53 by inputting below command:
+```bash
+netstat -tulpn
+```
+<br>
+Make sure port 53 is clear
+4. 

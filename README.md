@@ -24,6 +24,7 @@ echo \
 apt update
 apt install -y docker-ce-cli docker.io
 docker run hello-world
+apt install vim #need a text editor
 ```
 2. Remove systemd-resolv from port 53, we need this port for dns traffic
 ```bash
@@ -104,4 +105,3 @@ sudo ufw allow 443
 sudo ufw allow 3000
 sudo ufw allow 3000
 ```
-

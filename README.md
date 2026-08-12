@@ -49,7 +49,6 @@ mkdir adguard-home
 cd adguard-home
 ```
 6. echo the following into the docker-compose.yml
-```bash
 echo "services:
   adguard:
     image: adguard/adguardhome:latest
@@ -72,5 +71,4 @@ echo "services:
       - ./conf:/opt/adguardhome/conf
       # Persist work data including query logs and filters
       - ./work:/opt/adguardhome/work" >> docker-compose.yml
-```
 7. 

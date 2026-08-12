@@ -3,6 +3,7 @@
 ## System Requirements
 Docker container - Ubuntu 24.04
 <br>
+<br>
 **CPU:** 2 cores
 <br>
 **RAM:** 512MB

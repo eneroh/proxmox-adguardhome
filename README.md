@@ -52,51 +52,7 @@ mkdir adguard-home
 cd adguard-home
 ```
 <br>
-6. echo the following into the docker-compose.yml
-<br>
-echo "services:
-<br>
-  adguard:
-<br>  
-  image: adguard/adguardhome:latest
-<br>
-    container_name: adguard-home
-<br>
-    restart: unless-stopped
-<br>   
-    # Map individual ports for DNS, the setup wizard, and encrypted DNS
-<br>
-    ports:
-<br>
-      # DNS ports - these handle all DNS queries
-<br>
-      - "53:53/tcp"
-<br>
-      - "53:53/udp"
-<br>
-      # Web UI and API
-<br>
-      - "80:80/tcp"
-<br>
-      - "3000:3000/tcp"
-<br>
-      # DNS-over-TLS
-<br>
-      - "853:853/tcp"
-<br>
-      # DNS-over-HTTPS
-<br>
-      - "443:443/tcp"
-<br>
-volumes:
-<br>
-# Persist configuration across container restarts
-<br>
-  - ./conf:/opt/adguardhome/conf
-<br>
-# Persist work data including query logs and filters
-<br>
-  - ./work:/opt/adguardhome/work" >> docker-compose.yml
+6. View the docker-compose.yml file in this repo and copy it across to your own local docker-compose.yml file
 7. Using ufw allow the following ports:
 ```bash
 sudo ufw enable
